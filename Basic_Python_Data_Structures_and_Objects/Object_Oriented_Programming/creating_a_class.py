@@ -138,3 +138,124 @@ cat_two.become_hunting_buddies(cat_one)
 print(cat_one)
 print(cat_two)
 print(cat_three)
+
+
+########################################################
+
+'''
+You go to measure several circles you happen to find around.
+
+A medium pizza that is 12 inches across.
+Your teaching table which is 36 inches across.
+The Round Room auditorium, which is 11,460 inches across.
+You save the areas of these three things into pizza_area, teaching_table_area, and round_room_area.
+
+Remember that the .radius of a circle is half the diameter. We gave three diameters here, so halve them before you calculate the given circle’s area.
+'''
+
+class Circle:
+  pi = 3.14
+  def area(self, radius):
+    return self.pi * (radius**2)
+
+circle = Circle()
+
+pizza_area = circle.area(12 / 2)
+print(pizza_area)
+
+teaching_table_area = circle.area(36 / 2)
+print(teaching_table_area)
+
+round_room_area = circle.area(11460 / 2)
+print(round_room_area)
+
+###################################################
+
+class Shouter:
+  def __init__(self, phrase):
+    # make sure phrase is a string
+    if type(phrase) == str:
+
+      # then shout it out
+      print(phrase.upper())
+
+shout1 = Shouter("shout")
+# prints "SHOUT"
+
+shout2 = Shouter("shout")
+# prints "SHOUT"
+
+shout3 = Shouter("let it all out")
+# prints "LET IT ALL OUT"
+
+####################################################
+
+can_we_count_it = [{'s': False}, "sassafrass", 18, ["a", "c", "s", "d", "s"]]
+
+for element in can_we_count_it:
+  if hasattr(element, "count"):
+    print(str(type(element)) + " has the count attribute!")
+  else:
+    print(str(type(element)) + " does not have the count attribute :(")
+    
+
+####################################################
+
+class SearchEngineEntry:
+  secure_prefix = "https://"
+  def __init__(self, url):
+    self.url = url
+
+  def secure(self):
+    return "{prefix}{site}".format(prefix=self.secure_prefix, site=self.url)
+
+codecademy = SearchEngineEntry("www.codecademy.com")
+wikipedia = SearchEngineEntry("www.wikipedia.org")
+
+print(codecademy.secure())
+# prints "https://www.codecademy.com"
+
+print(wikipedia.secure())
+# prints "https://www.wikipedia.org"
+
+#########################################################
+
+class Student:
+  def __init__(self, name, year):
+    self.name = name
+    self.year = year
+    self.grades = []
+  
+  def add_grade(self, grade):
+    self.grade = grade
+
+    if type(grade) is Grade:
+      self.grades.append(grade)
+
+
+roger = Student("Roger van der Weyden", 10)
+sandro = Student("Sandro Botticelli", 12)
+pieter = Student("Pieter Bruegel the Elder", 8)
+
+class Grade:
+  minimum_passing = 65
+  def __init__(self, score):
+    self.score = score
+  
+  def is_passing(self, score):
+    if self.score > minimum_passing:
+      return "You Passed!"
+
+pieter.add_grade(Grade(100))
+
+'''
+Great job! You’ve created two classes and defined their interactions. This is object-oriented programming! From here you could:
+
+-Write a Grade method .is_passing() that returns whether a Grade has a passing .score.
+
+-Write a Student method .get_average() that returns the student’s average score.
+
+-Add an instance variable to Student that is a dictionary called .attendance, with dates as keys and booleans as values that indicate whether the student attended school that day.
+
+-Write your own classes to do whatever logic you want!
+'''
