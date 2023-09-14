@@ -34,23 +34,33 @@ class Thundercat:
       print("{name} can't attack because they're knocked out!".format(name=self.name))
       return
 
+lino_o = Thundercat("Lion-O", "Sword", strike=50)
+tygra = Thundercat("Tygra", "Invisibility")
+cheetara = Thundercat("Cheetara", "Super Speed")
+panthro = Thundercat("Panthro", "Super Strength")
+print(lino_o)
+print(tygra)
+print(cheetara)
+print(panthro)
 
 
 
 class Mumraa:
-  def __init__(self, name, strike, health=100):
+  def __init__(self, name, type_of, strike, health=100):
     self.name = name
+    self.type_of = type_of
     self.health = health
     self.strike = strike
     self.is_knocked_out = False
+
+  def __repr__(self):
+    return "{name} is a {type_of} with a max health of {health} and a strike force of {strike}.".format(name=self.name, type_of=self.type_of, health=self.health, strike=self.strike)
+
+mummy_drone = Mumraa("Mummy", "drone", strike=15, health=30)
+mummy_lieutenant = Mumraa("Big Mummy", "lieutenant", strike=25, health=50)
+boss = Mumraa("Mumraa", "boss", strike=60, health=200)
+
+print(mummy_drone)
+print(mummy_lieutenant)
+print(boss)
     
-
-
-one = Thundercat("Lion-O", "Sword", strike=50)
-two = Thundercat("Tygra", "Invisibility")
-three = Thundercat("Cheetara", "Super Speed")
-four = Thundercat("Panthro", "Super Strength")
-print(one)
-print(two)
-print(three)
-print(four)
