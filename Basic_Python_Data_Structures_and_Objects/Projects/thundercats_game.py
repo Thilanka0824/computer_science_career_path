@@ -40,3 +40,4 @@ class Mumraa:
     self.health = health
     self.strike = strike
     self.is_knocked_out = False
+
