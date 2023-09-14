@@ -1,4 +1,5 @@
-# computer_science_career_path
+
+## Codecademy Computer Science Career Path README
 
 This repository is a collection of my work from the Codecademy Computer Science Career Path.
 
