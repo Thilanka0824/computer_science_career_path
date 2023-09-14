@@ -5,6 +5,9 @@ class Thundercat:
     self.strike = strike
     self.super_power = strike * 1.5
     self.is_knocked_out = False
+
+  def __repr__(self):
+    return "{name} has {health} health hit points remaining. They have a {strike} strike force and a {super_power} super power strike!".format(name=self.name, health=self.health, strike=self.strike, super_power=self.super_power)
    
 
   def knocked_out(self):
@@ -40,4 +43,14 @@ class Mumraa:
     self.health = health
     self.strike = strike
     self.is_knocked_out = False
+    
 
+
+one = Thundercat("Lion-O", "Sword", strike=50)
+two = Thundercat("Tygra", "Invisibility")
+three = Thundercat("Cheetara", "Super Speed")
+four = Thundercat("Panthro", "Super Strength")
+print(one)
+print(two)
+print(three)
+print(four)
