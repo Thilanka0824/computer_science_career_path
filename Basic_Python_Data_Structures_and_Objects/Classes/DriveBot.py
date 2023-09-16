@@ -5,11 +5,14 @@ class DriveBot:
     all_disabled = False
     latitude = -999999
     longitude = -999999
+    robot_count = 0
 
     def __init__(self, motor_speed=0, direction=180, sensor_range=10):
         self.motor_speed = motor_speed
         self.direction = direction
         self.sensor_range = sensor_range
+        DriveBot.robot_count += 1
+        self.id = DriveBot.robot_count
     
     # Add the methods here!
     def control_bot(self, new_speed, new_direction):
@@ -19,7 +22,7 @@ class DriveBot:
     def adjust_sensor(self, new_sensor_range):
       self.sensor_range = new_sensor_range
 
-      
+
 
 robot_1 = DriveBot()
 # Use the methods here!
@@ -49,3 +52,7 @@ DriveBot.all_disabled = True
 print(robot_1.latitude)
 print(robot_2.longitude)
 print(robot_3.all_disabled)
+
+print("ID", robot_1.id)
+print("ID", robot_2.id)
+print("ID", robot_3.id)
