@@ -39,8 +39,8 @@ class Deck:
         single_card = self.deck.pop()
         return single_card
     
-test_deck = Deck()
-print(test_deck)
+# test_deck = Deck()
+# print(test_deck)
 
 class Hand:
     def __init__(self):
@@ -51,3 +51,26 @@ class Hand:
     def add_card(self, card):
         self.cards.append(card)
         self.value += values[card.rank]        
+        if card.rank == "Ace":
+            self.aces += 1 #add to self.aces
+
+test_deck = Deck()
+test_deck.shuffle()
+test_player = Hand()
+test_player.add_card(test_deck.deal())
+test_player.add_card(test_deck.deal())
+test_player.value
+
+for card in test_player.cards:
+    print(card)
+
+class Chips:
+    def __init__(self):
+        self.total = 100
+        self.bet = 0
+    
+    def win_bet(self):
+        self.total += self.bet
+    
+    def lose_bet(self):
+        self.total -= self.bet
