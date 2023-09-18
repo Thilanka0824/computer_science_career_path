@@ -64,8 +64,9 @@ def remove_node(self, value_to_remove):
         else:
           current_node = next_node
     
-def remove_multiple_nodes(self, value_to_remove):
+def remove_multiple_nodes(self, values_to_remove):
   current_node = self.get_head_node()
+
 
 
 
