@@ -33,3 +33,32 @@ nth_last = nth_last_node(test_list, 45)
 print(nth_last.value)
 
 #The exact variable names aren’t important, and the internal implementation could be written in a number of ways, but the important part is that we are able to complete this problem efficiently, in O(n) time (we must iterate through the entire list once), and O(1) space complexity (we always use only three variables no matter what size the linked list is: two pointers and a counter).
+
+
+
+# this function returns the middle node of a linked list
+def find_middle(linked_list): 
+  count = 0
+  fast_pointer = linked_list.head_node
+  slow_pointer = linked_list.head_node
+
+  while fast_pointer:
+    fast_pointer = fast_pointer.get_next_node() # set the fast pointer to the next node
+    if count % 2 != 0: # if the count is odd
+      slow_pointer = slow_pointer.get_next_nde() # set the slow pointer to the next node
+    count +=1  # increment the count
+  return slow_pointer 
+
+
+
+def generate_test_linked_list(length):
+  linked_list = LinkedList()
+  for i in range(length, 0, -1):
+    linked_list.insert_beginning(i)
+  return linked_list
+
+# Use this to test your code:
+test_list = generate_test_linked_list(7)
+print(test_list.stringify_list())
+middle_node = find_middle(test_list)
+print(middle_node.value)
